@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  bot:
+    build: .
+    command: python main.py
+    volumes:
+      - .:/bot
+    env_file:
+     - .env
+    networks:
+      - mynetwork
+
+networks:
+   mynetwork:
+     external: true
+
+
